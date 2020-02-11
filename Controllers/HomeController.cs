@@ -27,6 +27,19 @@ namespace ViewModelFun.Controllers
       return View(message);
     }
 
+    [HttpGet("numbers")]
+    public IActionResult Numbers()
+    {
+      Numbers numList = new Numbers();
+      numList.numbers[0] = 1;
+      numList.numbers[1] = 2;
+      numList.numbers[2] = 3;
+      numList.numbers[3] = 10;
+      numList.numbers[4] = 43;
+      numList.numbers[5] = 5;
+      return View(numList);
+    }
+
     public IActionResult Privacy()
     {
       return View();
