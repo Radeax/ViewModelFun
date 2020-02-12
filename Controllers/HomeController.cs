@@ -35,12 +35,24 @@ namespace ViewModelFun.Controllers
     [HttpGet("user")]
     public new IActionResult User()
     {
-      User user = new User()
-      {
-        Name = "Joven Poblete"
-      };
+      User user = new User("Joven Poblete");
 
       return View(user);
+    }
+
+    [HttpGet("users")]
+    public IActionResult Users()
+    {
+      User[] users = new User[]
+      {
+        new User("Joven Poblete"),
+        new User("Moose Phillips"),
+        new User("Jerry"),
+        new User("Rene Ricky"),
+        new User("Barbarah")
+      };
+
+      return View(users);
     }
 
     public IActionResult Privacy()
